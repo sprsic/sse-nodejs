@@ -1,0 +1,13 @@
+<html>
+   <head></head>
+   <body>
+	<h2>Displaying time using sse:</h2>
+      <div><p id="data"></p></div>
+   </body>
+<script type="text/javascript">
+var source = new EventSource("/event");
+   source.onmessage = function(event) {
+   document.getElementById("data").innerHTML = event.data;
+};
+</script>
+<html>
